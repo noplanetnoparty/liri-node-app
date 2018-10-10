@@ -1,10 +1,12 @@
 # liri-node-app
 LIRI: Search Spotify for songs, Bands in Town for concerts, OMDB for movies
 
+Must have 'node liri.js' in the command line before entering Request 
+
 **SPOTIFY**
 Searches the Spotify API when: 
 
-Request:  'spotify-this-song'
+Request: 'spotify-this-song'
 
 Response:  
 
@@ -14,8 +16,10 @@ Response:
    * The album that the song is from
 
 Screenshot:
-![spotify](spotify-this-song_extraordinaryMachine.png)
+![spotify](images/spotify-this-song_extraordinaryMachine.png)
 
+IF NO USER INPUT:
+![spotify2](images/spotify-this-song_ace.png)
 
 **OMBD**
 Searches the OMDB API when:
@@ -34,7 +38,10 @@ Response:
    * Actors in the movie.
 
 Screenshot:
-![omdb](movie-this_bambi.png)
+![omdb](images/movie-this_bambi.png)
+
+IF NO USER INPUT:
+
 
 **BANDS IN TOWN** 
 
@@ -49,7 +56,7 @@ Response:
    * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
 Screenshot:
-![bands](concert-this_eltonJohn.png)
+![bands](images/concert-this_eltonJohn.png)
 
 **DO WHAT IT SAYS**
 
@@ -59,7 +66,12 @@ Request: 'do-what-it-says'
 
 Response: 
 
+   * Artist(s): Backstreet Boys
+   * Song: I Want It That Way
+   * Album: The Hits--Chapter One
+   * Preview Link: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=993ae2fce96d44739a199048023645af
+
 Screenshot:
-![doThis](do-what-it-says.png)
+![doThis](images/do-what-it-says.png)
 
 

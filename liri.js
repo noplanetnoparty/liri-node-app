@@ -10,7 +10,7 @@ var userInput = process.argv.slice(3).join("%20");
 
 
 /////////////// SPOTIFY
-var spotifyThisSong = function (x) {
+var spotifyThisSong = function () {
 
     if (!userInput) {
         userInput = "the sign ace of base";
@@ -42,13 +42,15 @@ var spotifyThisSong = function (x) {
 ////////////    OMDB
 var movieThis = function () {
     var movieName = userInput;
+    
+    if (!movieName) {
+        movieName = "Mr Nobody";
+    }
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
-
     //debug URL
     // console.log(queryUrl);
 
     request(queryUrl, function (error, response, body) {
-
         // If the request is successful
         if (!error && response.statusCode === 200) {
             // * Title of the movie. 
@@ -71,7 +73,7 @@ var movieThis = function () {
                 if (JSON.parse(body).Ratings[i].Source === "Rotten Tomatoes") {
                     console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value);
                 }
-            };
+            }
         }
     });
 };
@@ -101,7 +103,7 @@ var concertThis = function () {
                 var location = bandData[i].venue.region;
                 if (!location) {
                     console.log("Location: " + bandData[i].venue.city + ", " + bandData[i].venue.country)
-                }else {
+                } else {
                     console.log("Location: " + bandData[i].venue.city + ", " + location)
                 }
 
@@ -125,11 +127,13 @@ if (type === "spotify-this-song") {
     fs.readFile('random.txt', 'utf8', function (error, data) {
         if (!error) {
             var formatData = data.split(",");
-            console.log(formatData)
+            // console.log(formatData)
             var spotifyCommand = formatData[0];
-            var x = formatData[1];
+            var spotifySong = formatData[1];
+
             if (spotifyCommand === "spotify-this-song") {
-                spotifyThisSong(x);
+                userInput = spotifySong;
+                spotifyThisSong(spotifySong)
             }
         } else {
             console.log(error)
