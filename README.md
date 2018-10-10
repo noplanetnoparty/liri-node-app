@@ -2,7 +2,6 @@
 LIRI: Search Spotify for songs, Bands in Town for concerts, OMDB for movies
 
 **SPOTIFY**
-
 Searches the Spotify API when: 
 
 Request:  'spotify-this-song'
@@ -14,6 +13,8 @@ Response:
    * A preview link of the song from Spotify
    * The album that the song is from
 
+Screenshot:
+![spotify](spotify-this-song_extraordinaryMachine.png)
 **OMBD**
 Searches the OMDB API when:
 
@@ -30,6 +31,7 @@ Response:
    * Plot of the movie.
    * Actors in the movie.
 
+Screenshot:
 
 **BANDS IN TOWN** 
 
@@ -43,6 +45,8 @@ Response:
    * Venue location
    * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
+Screenshot:
+
 **DO WHAT IT SAYS**
 
 Using the fs Node package, pulls text from the random.txt file and uses the data to search Spotify for "I want it that way"
@@ -50,6 +54,8 @@ Using the fs Node package, pulls text from the random.txt file and uses the data
 Request: 'do-what-it-says'
 
 Response: 
+
+Screenshot:
 
 
 
