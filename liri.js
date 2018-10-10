@@ -42,7 +42,7 @@ var spotifyThisSong = function () {
 ////////////    OMDB
 var movieThis = function () {
     var movieName = userInput;
-    
+
     if (!movieName) {
         movieName = "Mr Nobody";
     }
@@ -135,9 +135,8 @@ if (type === "spotify-this-song") {
                 userInput = spotifySong;
                 spotifyThisSong(spotifySong)
             }
-        } else {
-            console.log(error)
-            return;
         }
     });
+} else if (!type) {
+    console.log("\nPlease enter a valid search type:\n\nSpotify: spotify-this-song\nOMDB: movie-this\nBands In Town: concert-this\n")
 }

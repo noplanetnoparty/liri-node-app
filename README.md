@@ -74,4 +74,20 @@ Response:
 Screenshot:
 ![doThis](images/do-what-it-says.png)
 
+**NO "type" ENTRY**
+
+Using the fs Node package, pulls text from the random.txt file and uses the data to search Spotify for "I want it that way"
+
+Request: search type left blank
+
+Response: 
+
+    Please enter a valid search type:
+
+    Spotify: spotify-this-song
+    OMDB: movie-this
+    Bands In Town: concert-this
+
+Screenshot:
+![noType](images/no-search-type.png)
 
