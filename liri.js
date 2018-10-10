@@ -10,7 +10,7 @@ var userInput = process.argv.slice(3).join("%20");
 
 
 /////////////// SPOTIFY
-var spotifyThisSong = function () {
+var spotifyThisSong = function (x) {
 
     if (!userInput) {
         userInput = "the sign ace of base";
@@ -27,14 +27,14 @@ var spotifyThisSong = function () {
             } else {
                 for (var i = 0; i < data.tracks.items[0].artists.length; i++) {
                     if (i === 0) {
-                        console.log("Artist(s): " + data.tracks.items[0].artists[i].name);
+                        console.log("\nArtist(s): " + data.tracks.items[0].artists[i].name);
                     } else {
-                        console.log(" " + data.tracks.items[0].artists[i].name);
+                        console.log("\n " + data.tracks.items[0].artists[i].name);
                     }
                 }
-                console.log("Song: " + data.tracks.items[0].name);
-                console.log("Preview Link: " + data.tracks.items[0].preview_url);
-                console.log("Album: " + data.tracks.items[0].album.name);
+                console.log("\nSong: " + data.tracks.items[0].name);
+                console.log("\nAlbum: " + data.tracks.items[0].album.name);
+                console.log("\nPreview Link: " + data.tracks.items[0].preview_url + "\n");
             }
         });
 }
@@ -45,7 +45,7 @@ var movieThis = function () {
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
     //debug URL
-    console.log(queryUrl);
+    // console.log(queryUrl);
 
     request(queryUrl, function (error, response, body) {
 
@@ -83,8 +83,7 @@ var concertThis = function () {
     var queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
     //debug URL
-    console.log(queryUrl);
-
+    // console.log(queryUrl);
 
     request(queryUrl, function (error, response, body) {
 
@@ -92,13 +91,20 @@ var concertThis = function () {
             // Save band data in variable
             var bandData = JSON.parse(body);
 
-            console.log(artist + " Concert Information:");
+            console.log(artist + " Concert Information:\n");
 
             for (i = 0; i < bandData.length; i++) {
 
                 //Name of venue, Venue location, Date of event (MM/DD/YYYY)
                 console.log("\nVenue: " + bandData[i].venue.name);
-                console.log("Location: " + bandData[i].venue.city + ", " + bandData[i].venue.country);
+
+                var location = bandData[i].venue.region;
+                if (!location) {
+                    console.log("Location: " + bandData[i].venue.city + ", " + bandData[i].venue.country)
+                }else {
+                    console.log("Location: " + bandData[i].venue.city + ", " + location)
+                }
+
                 var date = moment(bandData[i].datetime).format("MM/DD/YYYY");
                 console.log("Date: " + date);
             }
@@ -121,9 +127,9 @@ if (type === "spotify-this-song") {
             var formatData = data.split(",");
             console.log(formatData)
             var spotifyCommand = formatData[0];
-            var spotifySong = formatData[1];
+            var x = formatData[1];
             if (spotifyCommand === "spotify-this-song") {
-                spotifyThisSong(spotifySong);
+                spotifyThisSong(x);
             }
         } else {
             console.log(error)
