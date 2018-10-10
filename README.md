@@ -41,7 +41,7 @@ Screenshot:
 ![omdb](images/movie-this_bambi.png)
 
 IF NO USER INPUT:
-
+![omdb2](images/movie-this_MrNobody.png)
 
 **BANDS IN TOWN** 
 
