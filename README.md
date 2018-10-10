@@ -3,10 +3,10 @@ LIRI(Language Interpretation and Recognition Interface): Searches Spotify for so
 
 LIRI can take in the following request types:
 
-concert-this
-spotify-this-song
-movie-this
-do-what-it-says
+   * concert-this
+   * spotify-this-song
+   * movie-this
+   * do-what-it-says
 
 *NOTE: Must have 'node liri.js' in the command line before entering Request* 
 
