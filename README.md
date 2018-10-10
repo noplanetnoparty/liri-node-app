@@ -15,6 +15,8 @@ Response:
 
 Screenshot:
 ![spotify](spotify-this-song_extraordinaryMachine.png)
+
+
 **OMBD**
 Searches the OMDB API when:
 
@@ -32,6 +34,7 @@ Response:
    * Actors in the movie.
 
 Screenshot:
+![omdb](movie-this_bambi.png)
 
 **BANDS IN TOWN** 
 
@@ -46,6 +49,7 @@ Response:
    * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
 Screenshot:
+![bands](concert-this_eltonJohn.png)
 
 **DO WHAT IT SAYS**
 
@@ -56,6 +60,6 @@ Request: 'do-what-it-says'
 Response: 
 
 Screenshot:
-
+![doThis](do-what-it-says.png)
 
 
