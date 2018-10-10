@@ -1,5 +1,5 @@
-# liri-node-app
-LIRI(Language : Searches Spotify for songs, Bands in Town for concerts, OMDB for movies.
+# Liri Node App
+LIRI(Language Interpretation and Recognition Interface): Searches Spotify for songs, Bands in Town for concerts, OMDB for movies.
 
 LIRI can take in the following request types:
 
@@ -8,7 +8,7 @@ spotify-this-song
 movie-this
 do-what-it-says
 
-NOTE: Must have 'node liri.js' in the command line before entering Request 
+*NOTE: Must have 'node liri.js' in the command line before entering Request* 
 
 ## SPOTIFY
 
