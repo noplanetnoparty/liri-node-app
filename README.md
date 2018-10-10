@@ -10,7 +10,7 @@ do-what-it-says
 
 NOTE: Must have 'node liri.js' in the command line before entering Request 
 
-##SPOTIFY
+## SPOTIFY
 
 Searches the Spotify API when:
 
@@ -31,7 +31,7 @@ Screenshot:
 IF NO USER INPUT:
 ![spotify2](images/spotify-this-song_ace.png)
 
-##OMDB
+## OMDB
 
 Searches the OMDB API when:
 
@@ -56,7 +56,7 @@ Screenshot:
 IF NO USER INPUT:
 ![omdb2](images/movie-this_MrNobody.png)
 
-##BANDS IN TOWN 
+## BANDS IN TOWN 
 
 Searches the Bands in Town Artist Events API when:
 
@@ -73,7 +73,7 @@ Response:
 Screenshot:
 ![bands](images/concert-this_eltonJohn.png)
 
-##DO WHAT IT SAYS
+## DO WHAT IT SAYS
 
 Using the fs Node package, pulls text from the random.txt file and uses the data to search Spotify for "I want it that way"
 
