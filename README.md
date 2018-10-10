@@ -1,12 +1,22 @@
-# liri-node-app
-LIRI: Search Spotify for songs, Bands in Town for concerts, OMDB for movies
+# Liri Node App
+LIRI(Language Interpretation and Recognition Interface): Searches Spotify for songs, Bands in Town for concerts, OMDB for movies.
 
-Must have 'node liri.js' in the command line before entering Request 
+LIRI can take in the following request types:
 
-**SPOTIFY**
-Searches the Spotify API when: 
+   * concert-this
+   * spotify-this-song
+   * movie-this
+   * do-what-it-says
+
+*NOTE: Must have 'node liri.js' in the command line before entering Request* 
+
+## SPOTIFY
+
+Searches the Spotify API when:
 
 Request: 'spotify-this-song'
+
+    e.g. node liri.js spotify-this-song '<song name here>'
 
 Response:  
 
@@ -21,10 +31,13 @@ Screenshot:
 IF NO USER INPUT:
 ![spotify2](images/spotify-this-song_ace.png)
 
-**OMBD**
+## OMDB
+
 Searches the OMDB API when:
 
 Request: 'movie-this'
+
+    e.g. node liri.js movie-this '<movie title here>'
 
 Response:
 
@@ -43,11 +56,13 @@ Screenshot:
 IF NO USER INPUT:
 ![omdb2](images/movie-this_MrNobody.png)
 
-**BANDS IN TOWN** 
+## BANDS IN TOWN 
 
 Searches the Bands in Town Artist Events API when:
 
 Request: 'concert-this' 
+
+    e.g. node liri.js concert-this '<band/artist name here>'
 
 Response: 
 
@@ -58,11 +73,16 @@ Response:
 Screenshot:
 ![bands](images/concert-this_eltonJohn.png)
 
-**DO WHAT IT SAYS**
+IF NO USER INPUT:
+![bands2](images/concert-this_noEntry.png)
+
+## DO WHAT IT SAYS
 
 Using the fs Node package, pulls text from the random.txt file and uses the data to search Spotify for "I want it that way"
 
 Request: 'do-what-it-says'
+
+    e.g. node liri.js do-what-it-says
 
 Response: 
 
@@ -74,7 +94,7 @@ Response:
 Screenshot:
 ![doThis](images/do-what-it-says.png)
 
-**NO "type" ENTRY**
+## NO "type" ENTRY
 
 Using the fs Node package, pulls text from the random.txt file and uses the data to search Spotify for "I want it that way"
 

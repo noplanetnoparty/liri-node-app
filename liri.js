@@ -110,6 +110,8 @@ var concertThis = function () {
                 var date = moment(bandData[i].datetime).format("MM/DD/YYYY");
                 console.log("Date: " + date);
             }
+        }else {
+            console.log("\nPlease enter a band or artist!\n")
         }
     });
 };
@@ -118,10 +120,13 @@ var concertThis = function () {
 //// run functions based on the type requested
 
 if (type === "spotify-this-song") {
+    console.log("Loading song...")
     spotifyThisSong(userInput);
 } else if (type === "movie-this") {
+    console.log("Loading movie...")
     movieThis(userInput);
 } else if (type === "concert-this") {
+    console.log("Loading concert details...")
     concertThis(userInput);
 } else if (type === "do-what-it-says") {
     fs.readFile('random.txt', 'utf8', function (error, data) {
