@@ -7,6 +7,7 @@ var keys = require("./keys");
 var spotify = new Spotify(keys.spotify);
 var type = process.argv[2];
 var userInput = process.argv.slice(3).join("%20");
+const chalk = require('chalk');
 
 
 /////////////// SPOTIFY
@@ -92,26 +93,36 @@ var concertThis = function () {
         if (!error && response.statusCode === 200) {
             // Save band data in variable
             var bandData = JSON.parse(body);
+            console.log(bandData)
 
-            console.log(artist + " Concert Information:\n");
+            console.log(chalk.bold(" Concert Information:\n"));
+            // console.log(artist)
 
             for (i = 0; i < bandData.length; i++) {
-
-                //Name of venue, Venue location, Date of event (MM/DD/YYYY)
-                console.log("\nVenue: " + bandData[i].venue.name);
-
-                var location = bandData[i].venue.region;
-                if (!location) {
-                    console.log("Location: " + bandData[i].venue.city + ", " + bandData[i].venue.country)
+                // console.log("length of band data array" + bandData.length)
+                if (bandData.length <= 0) {
+                    console.log(chalk.red("\nNo concert information on this artist: " + artist + "!\n"));
                 } else {
-                    console.log("Location: " + bandData[i].venue.city + ", " + location)
-                }
+                    // Name of Artist
+                    var lineup = bandData[i].lineup[0];
+                    console.log(chalk.bold.magenta("Artist: " + lineup));
 
-                var date = moment(bandData[i].datetime).format("MM/DD/YYYY");
-                console.log("Date: " + date);
+                    //Name of venue, Venue location, Date of event (MM/DD/YYYY)
+                    console.log(chalk.yellow("Venue: " + bandData[i].venue.name));
+
+                    var location = bandData[i].venue.region;
+                    if (!location) {
+                        console.log(chalk.yellow("Location: " + bandData[i].venue.city + ", " + bandData[i].venue.country))
+                    } else {
+                        console.log(chalk.yellow("Location: " + bandData[i].venue.city + ", " + location))
+                    }
+
+                    var date = moment(bandData[i].datetime).format("MM/DD/YYYY");
+                    console.log(chalk.bold.blueBright("Date: " + date + "\n"));
+                }
             }
-        }else {
-            console.log("\nPlease enter a band or artist!\n")
+        } else {
+            console.log(chalk.red("\nPlease enter a band or artist!\n"));
         }
     });
 };
@@ -143,5 +154,5 @@ if (type === "spotify-this-song") {
         }
     });
 } else if (!type) {
-    console.log("\nPlease enter a valid search type:\n\nSpotify: spotify-this-song\nOMDB: movie-this\nBands In Town: concert-this\n")
+    console.log(chalk.red("\nPlease enter a valid search type:\n\nSpotify: spotify-this-song\nOMDB: movie-this\nBands In Town: concert-this\n"));
 }
