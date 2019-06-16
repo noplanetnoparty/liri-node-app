@@ -55,24 +55,24 @@ var movieThis = function () {
         // If the request is successful
         if (!error && response.statusCode === 200) {
             // * Title of the movie. 
-            console.log("\nTitle: " + JSON.parse(body).Title)
+            console.log(chalk.bold.green("\nTitle: " + JSON.parse(body).Title))
             // * Year the movie came out.
-            console.log("Release Year: " + JSON.parse(body).Year)
+            console.log(chalk.yellow("Release Year: " + JSON.parse(body).Year))
             // * IMDB Rating of the movie.
-            console.log("IMDB Rating: " + JSON.parse(body).imdbRating)
-            // * Country where the movie was produced.
-            console.log("Country: " + JSON.parse(body).Country)
+            console.log(chalk.yellow("Country: " + JSON.parse(body).Country))
             // * Language of the movie.
-            console.log("Language: " + JSON.parse(body).Language)
+            console.log(chalk.yellow("Language: " + JSON.parse(body).Language))
             // * Plot of the movie.
-            console.log("Plot: " + JSON.parse(body).Plot)
-            // * Actors in the movie.
-            console.log("Actors: " + JSON.parse(body).Actors)
+            console.log(chalk.red("Actors: " + JSON.parse(body).Actors))
             // * Rotten Tomatoes Rating of the movie.
+            console.log(chalk.dim("Plot: " + JSON.parse(body).Plot))
+            // * Actors in the movie.
+            console.log(chalk.bold.magenta("IMDB Rating: " + JSON.parse(body).imdbRating))
+            // * Country where the movie was produced.
 
             for (var i = 0; i < JSON.parse(body).Ratings.length; i++) {
                 if (JSON.parse(body).Ratings[i].Source === "Rotten Tomatoes") {
-                    console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value);
+                    console.log(chalk.bold.blue("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value));
                 }
             }
         }
