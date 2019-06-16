@@ -65,7 +65,7 @@ var movieThis = function () {
             // * Plot of the movie.
             console.log(chalk.red("Actors: " + JSON.parse(body).Actors))
             // * Rotten Tomatoes Rating of the movie.
-            console.log(chalk.dim("Plot: " + JSON.parse(body).Plot))
+            console.log(chalk.whiteBright("Plot: " + JSON.parse(body).Plot))
             // * Actors in the movie.
             console.log(chalk.bold.magenta("IMDB Rating: " + JSON.parse(body).imdbRating))
             // * Country where the movie was produced.
